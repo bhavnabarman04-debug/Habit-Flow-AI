@@ -10,7 +10,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="Habit Flow AI",
-    page_icon="🌿",
+    page_icon="logo.png",
     layout="centered",
     initial_sidebar_state="expanded",
 )
@@ -711,6 +711,7 @@ def auth_screen():
 def render_sidebar(u):
     p = u["prefs"]
     with st.sidebar:
+        st.sidebar.image("logo.png", width=150)
         pointer("sidebar")
         st.markdown(f'<div class="hf-side-brand">🌿 {esc(u["app_name"])}</div>'
                     f'<div class="hf-side-user">Signed in as {esc(u["name"])} (@{esc(st.session_state.user)})</div>', unsafe_allow_html=True)
